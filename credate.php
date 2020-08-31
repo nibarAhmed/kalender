@@ -12,7 +12,7 @@
         <input type="submit" value="klar">
     </form>
     <?php
-    //$_SESSION['userid'] = $userid;
+    $_SESSION['userid'] = $userid;
     $datum = $_POST['datum'];
     $event = $_POST['event'];
     $conn = new mysqli('localhost', 'root','','kalender');
@@ -21,9 +21,8 @@
      die("Connection failed: " . $conn->connect_error);
      
  }
- $user='bbb';
-     $userid = 111;
-     $sql = "INSERT INTO events(event,datum,userid) VALUES ('$event','$datum','$userid')";
+ 
+     $sql = "INSERT INTO events(event,datum,userid,week) VALUES ('$event','$datum','$userid','$week')";
      $conn->query($sql);
     
     ?>
