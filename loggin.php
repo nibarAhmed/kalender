@@ -24,7 +24,7 @@ $query = $conn->query($sql);
 
 $resultat = $query->fetch_assoc();
 switch($x){
-    case 1:        
+    case 1:        kk
 if (!empty($resultat)) {
     echo "<form action='kal.html' method='post'>
     <input type='submit' value='välkommen'>
