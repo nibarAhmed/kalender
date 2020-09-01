@@ -53,6 +53,7 @@ $conn->query($sql);
         echo "<form action='lo.html' method='post'>
         <input type='submit' value='välkommen'>
     </form>";
+    $sql = "SELECT userid FROM login WHERE user='$user' AND password='$password'";
     $resultt = $conn->query($sql);
      if ($resultt->num_rows > 0) {
         while($row = $resultt->fetch_assoc()) {
@@ -63,7 +64,6 @@ break;
 }
 
 $_SESSION['userid']=$userid;
-
 ?>
 </body>
 </html>
