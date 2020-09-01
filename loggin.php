@@ -8,7 +8,7 @@
 <body>
 
 <?php 
-session_start(
+session_start();
 $user=$_POST['user'];
 $password = $_POST['password'];
 
@@ -58,7 +58,6 @@ break;
 }
 
 $_SESSION['userid']=$userid;
-$_SESSION['user']=$user;
 
 ?>
 </body>
