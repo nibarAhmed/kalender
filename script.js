@@ -19,9 +19,12 @@ function generateCalendar(date)
 var dateStr=" ";
 //the for loop is based on the amount of days of the year. this is so that we are able to generate the right amount of days
 for(var i=0; i<366; i++)
-{
+{  
      dateStr+=date.toDateString()+'</br>';
-    document.getElementById('date').innerHTML=dateStr;
+     var a=document.createElement("a");
+     a.setAttribute("href", 'credate.php');
+     a.innerHTML=dateStr;
+     document.getElementsByTagName("body").appendChild(a);
     //here we check if the date has reached 1  the month changes to the next month and the date changes as well. if date isn't one we continue to generate days until we reach 1.
 if(date==1)
 {
@@ -32,6 +35,8 @@ else
 date.setDate(date.getDate()+1);
 }
 }
+//generateCalendar(date);
+
 //this function will print out the week as well as the days of the week.
 function generateWeek(currentDate)
 {
@@ -44,4 +49,20 @@ for(var i=0; i<7; i++)
 }
 
 }
-generateWeek(currentDate);
+//generateWeek(currentDate);
+function getDateRangeWeek(weekNo){
+  var d1 = new Date();
+  numDaysPastLastMonday = eval(d1.getDay()- 1);
+  d1.setDate(d1.getDate() - numDaysPastLastMonday);
+  var weekNoToday = d1.getWeekNumber();
+  var weeksInTheFuture = eval( weekNo - weekNoToday );
+  d1.setDate(d1.getDate() + eval( 7 * weeksInTheFuture ));
+  var rangeIsFrom = eval(d1.getMonth()+1) +"/" + d1.getDate() + "/" + d1.getFullYear();
+  d1.setDate(d1.getDate() + 6);
+  var rangeIsTo = eval(d1.getMonth()+1) +"/" + d1.getDate() + "/" + d1.getFullYear() ;
+  return    [ rangeIsFrom, rangeIsTo];
+
+}
+var range=getDateRangeWeek(36);
+var rangeFrom=range[0]
+document.write(rangeFrom);
