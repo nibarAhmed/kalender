@@ -8,7 +8,7 @@
 <body>
 
 <?php 
-session_start(
+session_start();
 $user=$_POST['user'];
 $password = $_POST['password'];
 
@@ -24,7 +24,7 @@ $query = $conn->query($sql);
 
 $resultat = $query->fetch_assoc();
 switch($x){
-    case 1:        kk
+    case 1:        
 if (!empty($resultat)) {
     echo "<form action='kal.html' method='post'>
     <input type='submit' value='välkommen'>
@@ -58,7 +58,6 @@ break;
 }
 
 $_SESSION['userid']=$userid;
-$_SESSION['user']=$user;
 
 ?>
 </body>
