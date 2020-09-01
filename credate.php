@@ -9,24 +9,27 @@
     <form action="credate.php" method="post">
         <input type="date" name="datum">
         <input type="text" name="event">
-        <input type="submit" value="klar">
+        <input type="submit" value="klar" name="submit">
     </form>
     <?php
     //$_SESSION['userid'] = $userid;
     $userid = 111;
-    $datum = $_POST['datum'];
-    $event = $_POST['event'];
+   
     $conn = new mysqli('localhost', 'root','','kalender');
     $conn->set_charset("utf8");
     if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);
      }  
-     if($event ==""){
-         echo "skriv";
-     }else{
-     $sql = "INSERT INTO events(event,datum,userid) VALUES ('$event','$datum','$userid')";
-     $conn->query($sql);
-     }
+     if(isset($_POST['datum'])&&isset($_POST['event'])){
+        $datum = $_POST['datum'];
+        $event = $_POST['event'];
+        $sql = "INSERT INTO events(event,datum,userid) VALUES ('$event','$datum','$userid')";
+         $conn->query($sql);
+         header("location:events.php");
+        }
+     
+     
+     
     ?>
 </body>
 </html>

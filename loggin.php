@@ -9,9 +9,10 @@
 
 <?php 
 session_start();
+if(isset($_POST['user'])&&isset($_POST['password'])){
 $user=$_POST['user'];
 $password = $_POST['password'];
-
+}
 $x = $_POST['x'];//holler koll på om du skapat skapat ett tidigare konto.
    $conn = new mysqli('localhost', 'root','','kalender');
    $conn->set_charset("utf8");
@@ -47,12 +48,16 @@ case 2:
         <input type='submit' value='det här användaren fis redan'>
     </form>";
     }else {
-        $userid = rand(1,100000000);
-        $sql = "INSERT INTO login (user,password,userid) VALUES ('$user','$password','$userid')";
+        $sql = "INSERT INTO login (user,password) VALUES ('$user','$password')";
 $conn->query($sql);
         echo "<form action='lo.html' method='post'>
         <input type='submit' value='välkommen'>
     </form>";
+    $resultt = $conn->query($sql);
+     if ($resultt->num_rows > 0) {
+        while($row = $resultt->fetch_assoc()) {
+           $userid=$row['userid'];
+        } }
         } 
 break;
 }
