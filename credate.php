@@ -7,8 +7,8 @@
 </head>
 <body>
     <form action="credate.php" method="post">
-        <input type="date" name="datum">
-        <input type="text" name="event">
+        <input type="date" name="datum" require>
+        <input type="text" name="event" require>
         <input type="submit" value="klar" name="submit">
     </form>
     <?php
@@ -20,15 +20,20 @@
     if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);
      }  
-     if(isset($_POST['datum'])&&isset($_POST['event'])){
-        $datum = $_POST['datum'];
+
+         $datum = $_POST['datum'];
         $event = $_POST['event'];
-        $sql = "INSERT INTO events(event,datum,userid) VALUES ('$event','$datum','$userid')";
-         $conn->query($sql);
-         header("location:events.php");
+        if (empty($event)) {
+            echo"error";
         }else{
-            
+        $sql = "INSERT INTO events(event,datum,userid) VALUES ('$event','$datum','$userid')";
+        
+        $conn->query($sql);
+echo "<form action='events.php'>
+    <input type='submit' value='event tillagt'>
+</form>";
         }
+        
      
      
      

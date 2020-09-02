@@ -9,7 +9,7 @@
 
 <?php 
 session_start();
-if(isset($_POST['user'])&&isset($_POST['password'])){
+
 $user=$_POST['user'];
 $password = $_POST['password'];
 
@@ -62,9 +62,7 @@ $conn->query($sql);
         } 
 break;
 }
-}else{
-    header("location:logg.html");
-}
+
 $_SESSION['userid']=$userid;
 ?>
 </body>
