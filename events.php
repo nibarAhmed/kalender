@@ -25,6 +25,8 @@
        
        
     }    
+}else{
+    echo"anvendaren har inga events";
 }
    
 
