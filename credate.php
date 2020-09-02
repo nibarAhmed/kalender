@@ -26,6 +26,8 @@
         $sql = "INSERT INTO events(event,datum,userid) VALUES ('$event','$datum','$userid')";
          $conn->query($sql);
          header("location:events.php");
+        }else{
+            
         }
      
      
