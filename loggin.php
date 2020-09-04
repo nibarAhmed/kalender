@@ -44,7 +44,7 @@ $resultt = $conn->query($sql);
 break;
 case 2:
     if(!empty($resultat)) {
-        echo "<form action='logg.html' method='post'>
+        echo "<form action='skapa.html' method='post'>
         <input type='submit' value='det här användaren fis redan'>
     </form>";
     }else {
