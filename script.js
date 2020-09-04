@@ -66,3 +66,8 @@ function getDateRangeWeek(weekNo){
 var range=getDateRangeWeek(36);
 var rangeFrom=range[0]
 document.write(rangeFrom);
+
+
+function eventtext(){
+
+}
