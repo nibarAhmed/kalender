@@ -14,7 +14,7 @@ body{
     height: 10%;
     background-color: blue;
 }
-.event{
+.evewrap{
     width: 70%;
     height: 100%;
     background-color:black;
@@ -25,14 +25,22 @@ body{
     height: 10%;
     background-color: rgb(32, 240, 240);
     margin-left: 1%;
-    margin-top: 2%;
 }
-.datum{
+.date{
     font-family: 'Fjalla One', sans-serif;
     margin-left: 2%;
     font-size: 170%;
     margin-top: 1%;
 }
 .not{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;   
+    margin-left: 2%;
+}
+.eventd{
+    clip-path: polygon(0 0, 50% 29%, 100% 0, 100% 10%, 50% 40%, 0 10%);
+    width: 10%;
+    height: 90%;
+    float: right;
+    margin-right: 5%;
+    background-color: black;
 }

@@ -25,6 +25,8 @@
         $event = $_POST['event'];
         if (empty($event)) {
             echo"error";
+        }elseif($datum == 0000-00-00) {
+            echo"error";
         }else{
         $sql = "INSERT INTO events(event,datum,userid) VALUES ('$event','$datum','$userid')";
         
