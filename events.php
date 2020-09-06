@@ -23,7 +23,7 @@
  if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
        echo '<div class="eve">
-         <p class="date">'.$row["datum"].'</p><div class="eventd"></div>
+         <p class="date">'.$row["datum"].'</p>
         <p class="not">'.$row["event"].'</p>
     </div>';
        
@@ -33,9 +33,8 @@
 }
 ?>
 </div>
-<a href="credate.php"><div class="tocre">till skapa</div></a>
+<a href="credate.php"><div class="tocre">+ läggtill påminelse</div></a>
      
     
-</div>
 </body>
 </html>
