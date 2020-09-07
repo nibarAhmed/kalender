@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,6 @@
 <body>
 
 <?php 
-session_start();
 
 $user=$_POST['user'];
 $password = $_POST['password'];
@@ -27,7 +30,7 @@ $resultat = $query->fetch_assoc();
 switch($x){
     case 1:        
 if (!empty($resultat)) {
-    echo "<form action='index.html' method='post'>
+    echo "<form action='index.php' method='post'>
     <input type='submit' value='välkommen'>
 </form>";
 $resultt = $conn->query($sql);
@@ -50,7 +53,7 @@ case 2:
     }else {
         $sql = "INSERT INTO login (user,password) VALUES ('$user','$password')";
 $conn->query($sql);
-        echo "<form action='index.html' method='post'>
+        echo "<form action='index.php' method='post'>
         <input type='submit' value='välkommen'>
     </form>";
     $sql = "SELECT userid FROM login WHERE user='$user' AND password='$password'";
