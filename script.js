@@ -22,7 +22,6 @@ for(var i=0; i<7; i++)
 }
 
 }
-//generateWeek(currentDate);
 function getDateRangeWeek(weekNo){
   var d1 = new Date();
   numDaysPastLastMonday = eval(d1.getDay()- 1);
@@ -30,14 +29,12 @@ function getDateRangeWeek(weekNo){
   var weekNoToday = d1.getWeekNumber();
   var weeksInTheFuture = eval( weekNo - weekNoToday );
   d1.setDate(d1.getDate() + eval( 7 * weeksInTheFuture ));
-  //var rangeIsFrom = eval(d1.getMonth()+1) +"/" + d1.getDate() + "/" + d1.getFullYear();
   var rangeIsFrom = d1.getFullYear()+"-"+eval( d1.getMonth()+1) +"-" +d1.getDate();
   d1.setDate(d1.getDate() + 6);
   var rangeIsTo =d1.getFullYear()+'-'+ eval(d1.getMonth()+1) +"-" + d1.getDate() + "-";
   return    [ rangeIsFrom, rangeIsTo];
 
 }
-<<<<<<< HEAD
 //now we are going to send the info above to php
 $(document).ready(function()
 {
@@ -63,13 +60,3 @@ $(document).ready(function()
     
 
 });
-=======
-var range=getDateRangeWeek(36);
-var rangeFrom=range[0]
-document.write(rangeFrom);
-
-
-function eventtext(){
-
-}
->>>>>>> 0a9c77059936c863e0707ff393680ac9686aa046
