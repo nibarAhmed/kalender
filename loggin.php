@@ -16,7 +16,7 @@ session_start();
 $user=$_POST['user'];
 $password = $_POST['password'];
 
-$x = $_POST['x'];//holler koll på om du skapat skapat ett tidigare konto.
+$x = $_POST['x'];//holler koll på om du skapat ett tidigare konto.
    $conn = new mysqli('localhost', 'root','','kalender');
    $conn->set_charset("utf8");
    if ($conn->connect_error) {
