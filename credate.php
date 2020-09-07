@@ -8,9 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <form action="credate.php" method="post">
-        <input class="" type="date" name="datum"  require>
-        <input type="text" name="event" placeholder="eventbeskrivning" require>
+    <form class="logwrap" action="credate.php" method="post">
+        <input class="textin" type="date" name="datum"  require>
+        <input class="textin" type="text" name="event" placeholder="eventbeskrivning" require>
         <input type="submit" value="klar" name="submit">
     </form>
     <?php
@@ -26,9 +26,9 @@
          $datum = $_POST['datum'];
         $event = $_POST['event'];
         if (empty($event)) {
-            echo"error";
+            echo"eventbeskrivning saknas";
         }elseif($datum == 0000-00-00) {
-            echo"error";
+            echo"datum saknas";
         }else{
         $sql = "INSERT INTO events(event,datum,userid) VALUES ('$event','$datum','$userid')";
         

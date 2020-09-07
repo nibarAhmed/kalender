@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="kalender.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <form action="loggin.php" method="POST">
-        <input type="text" name="user" placeholder="användarnamn" required>
-        <input type="password" name="password" placeholder="lösenord" required>
-        <input type="submit" value="skapa konto">
+    <form class="logwrap" action="loggin.php" method="POST">
+        <input class="textin" type="text" name="user" placeholder="användarnamn" required><br>
+        <input class="textin" type="text" name="password" placeholder="lösenord" required><br>
+        <input class="logb" type="submit" value="gör kalender">
         <input type="hidden" name="x" value="2">
      </form>
 </body>
