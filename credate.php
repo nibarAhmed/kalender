@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="kalender.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <form action="credate.php" method="post">
-        <input type="date" name="datum"  require>
+        <input class="" type="date" name="datum"  require>
         <input type="text" name="event" placeholder="eventbeskrivning" require>
         <input type="submit" value="klar" name="submit">
     </form>
