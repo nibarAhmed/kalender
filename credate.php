@@ -7,8 +7,8 @@
 </head>
 <body>
     <form action="credate.php" method="post">
-        <input type="date" name="datum" require>
-        <input type="text" name="event" require>
+        <input type="date" name="datum"  require>
+        <input type="text" name="event" placeholder="eventbeskrivning" require>
         <input type="submit" value="klar" name="submit">
     </form>
     <?php
