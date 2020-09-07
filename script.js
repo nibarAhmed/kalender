@@ -37,6 +37,7 @@ function getDateRangeWeek(weekNo){
   return    [ rangeIsFrom, rangeIsTo];
 
 }
+<<<<<<< HEAD
 //now we are going to send the info above to php
 $(document).ready(function()
 {
@@ -62,3 +63,13 @@ $(document).ready(function()
     
 
 });
+=======
+var range=getDateRangeWeek(36);
+var rangeFrom=range[0]
+document.write(rangeFrom);
+
+
+function eventtext(){
+
+}
+>>>>>>> 0a9c77059936c863e0707ff393680ac9686aa046
