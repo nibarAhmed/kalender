@@ -67,6 +67,7 @@ break;
 }
 
 $_SESSION['userid']=$userid;
+echo $userid;
 ?>
 </body>
-</html>
+</html>2

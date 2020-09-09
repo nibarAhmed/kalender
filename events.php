@@ -1,3 +1,7 @@
+
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +20,11 @@
     if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);
      }  
-    //$_SESSION['userid'] = $userid;
-    $userid = 111;
+     $userid=$_SESSION['userid'];
+    if(isset($_SESSION['userid']))
+    {
+     $userid=$_SESSION['userid'];
+
     $sql= "SELECT event,datum FROM events WHERE userid='$userid' ORDER BY datum";
     $result = $conn->query($sql);
  if ($result->num_rows > 0) {
@@ -31,6 +38,7 @@
 }else{
     echo"anvendaren har inga events";
 }
+    }
 ?>
 </div>
 <a href="credate.php"><div class="tocre">+ läggtill påminelse</div></a>

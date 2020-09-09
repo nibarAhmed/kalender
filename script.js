@@ -36,10 +36,10 @@ function getDateRangeWeek(weekNo){
 
 }
 //now we are going to send the info above to php
-$(document).ready(function()
+$(document).ready(sendWeek(currentDate));
+function sendWeek(currentDate)
 {
-  
-    var range=getDateRangeWeek(36);
+    var range=getDateRangeWeek(currentDate.getWeekNumber());
     var rangeFrom=range[0];
     var rangeTo=range[1];
     $.ajax({
@@ -59,4 +59,4 @@ $(document).ready(function()
     });
     
 
-});
+}
