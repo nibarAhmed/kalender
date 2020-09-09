@@ -1,6 +1,15 @@
 <?php
 session_start();
-
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<?php
 $mysqli=new mysqli("localhost", "root", "", "kalender");
 $mysqli->set_charset("utf8");
 //get the week range from the client.
@@ -18,7 +27,7 @@ if($result=$mysqli->query($sql))
 {
 while($row=$result->fetch_row())
 {
-    echo "<div>$row[0] $row[1]</div>";
+    echo "<div class="dag">$row[0] $row[1]</div>";
 
 }
 }
@@ -29,3 +38,5 @@ while($row=$result->fetch_row())
 }
 getEvent($mysqli);
 ?>
+</body>
+</html>
