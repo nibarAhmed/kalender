@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="kalender.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <form action="loggin.php" method="POST">
-        <input type="text" name="user" placeholder="användarnamn" required>
-        <input type="password" name="password" placeholder="lösenord" required>
-        <input type="submit" value="logga in">
+
+    <form class="logwrap" action="loggin.php" method="POST">
+        <input class="textin" type="text" name="user" placeholder="användrnamn" required><br>
+        <input class="textin" type="text" name="password" placeholder="lösenord" required><br>
+        <input class="logb" type="submit" value="logga in">
         <input type="hidden" name="x" value="1">
+        <a href="skapa.html"><p class="ska">bli medlem</p></a>
     </form>
-    <form action="logg.html">
-        <input type="submit" value="skapa ett konto">
-    </form>
+    
 </body>
 </html>
