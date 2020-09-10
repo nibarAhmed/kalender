@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 ?>
@@ -30,18 +29,19 @@ session_start();
  if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
        echo '<div class="eve">
-         <p class="date">'.$row["datum"].'</p>
+         <p class="date">'.$row["datum"].'</p><div class="eventd"></div>
         <p class="not">'.$row["event"].'</p>
     </div>';
        
 }    
 }else{
-    echo"anvendaren har inga events";
+    echo"<div class='eve'>du har inga påminelser</div>";
 }
     }
 ?>
 </div>
-<a href="credate.php"><div class="tocre">+ läggtill påminelse</div></a>
+<a href="credate.php"><div class="tocre">+ lägg till pominelse</div></a>
+<a href="index.php"><div class="tocre">tilbaka till din vecka</div></a>
      
     
 </body>
