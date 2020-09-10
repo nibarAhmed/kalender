@@ -54,7 +54,7 @@ echo "<form action='events.php'>
 </form>";
         }
 }
-
+}
         
     ?>    
 </body>
