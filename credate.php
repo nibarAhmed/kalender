@@ -16,6 +16,7 @@ $userid=$_SESSION['userid'];
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
 <body>
+<a href="events.php"><p class="tilbe">< gå tillbaka</p></a>
     <form class="logwrap" action="credate.php" method="post">
         <input class="textin" type="date" name="datum"  require>
         <input class="textin" type="text" name="event" placeholder="eventbeskrivning" require>
@@ -49,13 +50,12 @@ if(isset($_POST['event']))
         $sql = "INSERT INTO events(event,datum,userid) VALUES ('$event','$datum','$userid')";
         if($conn->query($sql))
         {
-echo "<form action='events.php'>
-    <input type='submit' value='event tillagt'>
-</form>";
+            header("location:events.php");
         }
 }
 }
         
     ?>    
+    
 </body>
 </html>

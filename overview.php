@@ -10,7 +10,9 @@ function getEvent($mysqli)
     {
         $rangeFrom=$_POST['rangeFrom'];
         $rangeTo=$_POST['rangeTo'];
-        $userId=$_SESSION['userid'];
+       $userId=$_SESSION['userid'];
+      
+      
 
     $sql="select datum, event from login join events on login.userid=events.userid where login.userid='$userId' and datum<='$rangeTo' and datum>='$rangeFrom' order by datum";
 
@@ -18,7 +20,7 @@ if($result=$mysqli->query($sql))
 {
 while($row=$result->fetch_row())
 {
-    echo "<div>$row[0] $row[1]</div>";
+    echo "<div class='dag'><p class='dd'>$row[0]</p><p class='de'>$row[1]</p></div>";
 
 }
 }

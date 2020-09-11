@@ -30,38 +30,29 @@ $resultat = $query->fetch_assoc();
 switch($x){
     case 1:        
 if (!empty($resultat)) {
-    echo "<form action='overview.php' method='post'>
-    <input type='submit' value='välkommen'>
-</form>";
 $resultt = $conn->query($sql);
      if ($resultt->num_rows > 0) {
         while($row = $resultt->fetch_assoc()) {
            $userid=$row['userid'];
         } }
+        header("location:index.php");
 }else {
-    echo "<form action='loggin.html' method='post'>
-    <input type='submit' value='prövaigen'>
-</form>";
-
+    header("location:loggin.html");
     } 
 break;
 case 2:
     if(!empty($resultat)) {
-        echo "<form action='skapa.html' method='post'>
-        <input type='submit' value='det här användaren fis redan'>
-    </form>";
+        header("location:skapa.html");
     }else {
         $sql = "INSERT INTO login (user,password) VALUES ('$user','$password')";
 $conn->query($sql);
-        echo "<form action='overview.php' method='post'>
-        <input type='submit' value='välkommen'>
-    </form>";
     $sql = "SELECT userid FROM login WHERE user='$user' AND password='$password'";
     $resultt = $conn->query($sql);
      if ($resultt->num_rows > 0) {
         while($row = $resultt->fetch_assoc()) {
            $userid=$row['userid'];
         } }
+        header("location:index.php");
         } 
 break;
 }
@@ -70,4 +61,4 @@ $_SESSION['userid']=$userid;
 echo $userid;
 ?>
 </body>
-</html>2
+</html>
