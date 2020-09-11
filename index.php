@@ -12,8 +12,7 @@ session_start();
 
 </head>
 <body id="body">
-<div id="event"></div>
-<div id="week"></div>
+<div class="eve" id="week"></div>
     <div class="vek">Din vecka<a href="events.php"><div class="tileve">alla påminelser</div></a></div>
     
 <div class="vwrap" id="event"></div>
