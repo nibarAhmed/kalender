@@ -18,7 +18,7 @@ $userid=$_SESSION['userid'];
 <body>
 <a href="events.php"><p class="tilbe">< gå tillbaka</p></a>
     <form class="logwrap" action="credate.php" method="post">
-        <input class="textin" type="date" name="datum"  require>
+        <input class="textin" type="date" name="datum" min="" require>
         <input class="textin" type="text" name="event" placeholder="eventbeskrivning" require>
         <input type="submit" value="klar" name="submit">
     </form>

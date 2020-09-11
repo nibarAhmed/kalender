@@ -11,11 +11,17 @@ Date.prototype.getWeekNumber = function(){
 var currentDate=new Date();
 
 //this function will print out the week as well as the days of the week.
-function printWeek(currentDate)
+function generateWeek(currentDate)
 {
-document.getElementById('week').innerHTML+="vecka"+currentDate.getWeekNumber();
+document.getElementById("weekNumber").innerHTML= currentDate.getWeekNumber();
+var days=["monday", "tue", "wednesday", "thursday", "fri", "saterday", "sunday"];
+var daysStr=" ";
+for(var i=0; i<7; i++)
+{
+    document.getElementById("day").innerHTML+=days[i]+'</br>';
 }
-printWeek(currentDate);
+
+}
 function getDateRangeWeek(weekNo){
   var d1 = new Date();
   numDaysPastLastMonday = eval(d1.getDay()- 1);
