@@ -6,15 +6,17 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>översikt</title>
     <link rel="stylesheet" href="kalender.css">
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 
 </head>
 <body id="body">
 <div id="event"></div>
-<div id="week"></div>
-    <div class="vek">Din vecka<a href="events.php"><div class="tileve">alla påminelser</div></a></div>
+    <div class="vek"> 
+    <div id="week"></div>
+
+        <a href="events.php"><div class="tileve">alla påminelser</div></a></div>
     
 <div class="vwrap" id="event"></div>
 
