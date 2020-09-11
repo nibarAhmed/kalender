@@ -86,6 +86,7 @@ a{
 .not{
     font-family: Arial, Helvetica, sans-serif;   
     margin-left: 2%;
+    max-width: 80%;
 }
 .eventd{
     clip-path: polygon(0 0, 50% 29%, 100% 0, 100% 10%, 50% 40%, 0 10%);
@@ -143,4 +144,10 @@ a{
 }
 .tilbe:hover{
     color: rgb(32, 240, 240);
+}
+.tabr{
+    float: right;
+    font-size: 110%;
+    height: auto;
+    width: auto;
 }

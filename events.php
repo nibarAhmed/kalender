@@ -29,8 +29,13 @@ session_start();
  if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
        echo '<div class="eve">
-         <p class="date">'.$row["datum"].'</p><div class="eventd"></div>
+         <p class="date">'.$row["datum"].'</p>
         <p class="not">'.$row["event"].'</p>
+        <form action="tabort.php" method="post">
+        <input class="tabr" type="submit" value="ta bort">
+        <input type="hidden" name="datum" value="'.$row["datum"].'">
+        <input type="hidden" name="event" value="'.$row["event"].'">
+        </form>
     </div>';
        
 }    
